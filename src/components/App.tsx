@@ -49,13 +49,8 @@ export const App: React.FC = () => {
   const [locations, setLocations] = useState<ILocation[]>([]);
   const [locationSearch, setLocationSearch] = useState<string>("");
   const [selectedAttrs, setSelectedAttributes] = useState<string[]>(kDefaultOnAttributes);
-  const [simEnabled, setSimEnabled] = useState(false);
 
   const { getDayLengthData, dataContext, getUniqueLocationsInCodapData } = useCodapData();
-
-  useEffect(() => {
-    setSimEnabled(!!dataContext);
-  }, [dataContext]);
 
   const currentDayLocationRef = useRef<ICurrentDayLocation>({
     _latitude: "",
@@ -150,8 +145,6 @@ export const App: React.FC = () => {
   }, [latitude, longitude, dayOfYear]);
 
   const handleTabClick = (tab: TabName) => {
-    // comment out next line during development
-    if (tab === "simulation" && !simEnabled) return;
     setActiveTab(tab);
     codapInterface.sendRequest({
       action: "update",
@@ -187,7 +180,6 @@ export const App: React.FC = () => {
       <Header
         activeTab={activeTab}
         onTabClick={handleTabClick}
-        showEnabled={simEnabled}
       />
       <div className={clsx("tab-content", { active: activeTab === "location" })}>
         <LocationTab
