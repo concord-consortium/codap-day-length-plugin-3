@@ -1,5 +1,5 @@
 export const kPluginName = "Day Length";
-export const kVersion = "1.1.0";
+export const kVersion = "1.2.0";
 export const kDataContextName = "DayLengthPluginData";
 export const kInitialDimensions = {
   width: 340,
