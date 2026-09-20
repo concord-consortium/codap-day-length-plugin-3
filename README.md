@@ -2,15 +2,15 @@
 
 Stand-alone/expanded version of the Day Length plugin for CODAP.
 
-## Deployment
-
-S3 deployment is handled by GitHub Actions using OIDC for AWS authentication. See [deploy-setup.md in starter-projects](https://github.com/concord-consortium/starter-projects/blob/main/doc/deploy-setup.md) for how the AWS side is set up, and [doc/deploy.md](doc/deploy.md) for how deploys work in this repo.
-
-### Initial steps
+## Initial steps
 
 1. Clone this repo and `cd` into it
 2. Run `npm install` to pull dependencies
 3. Run `npm start` to run `webpack-dev-server` in development mode with hot module replacement
+
+## Deployment
+
+S3 deployment is handled by GitHub Actions using OIDC for AWS authentication. See [deploy-setup.md in starter-projects](https://github.com/concord-consortium/starter-projects/blob/main/doc/deploy-setup.md) for how the AWS side is set up, and [doc/deploy.md](doc/deploy.md) for how deploys work in this repo.
 
 ## Testing the plugin in CODAP
 
